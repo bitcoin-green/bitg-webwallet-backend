@@ -1,0 +1,34 @@
+{
+  "name": "bitg-wallet-backend",
+  "version": "1.0.0",
+  "description": "This is the BitcoinGreen webwallet backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=development nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "json-rpc2": "^1.0.2",
+    "lodash": "^4.17.10",
+    "morgan": "^1.9.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "6.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "chai": "^4.1.2",
+    "eslint": "2.11.1",
+    "eslint-config-airbnb": "9.0.1",
+    "eslint-import-resolver-babel-module": "^3.0.0",
+    "eslint-plugin-import": "1.8.1",
+    "eslint-plugin-jsx-a11y": "1.3.0",
+    "eslint-plugin-react": "5.2.2",
+    "mocha": "^5.2.0",
+    "mocha-junit-reporter": "^1.12.0",
+    "nodemon": "^1.11.0"
+  }
+}
