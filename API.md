@@ -5,6 +5,7 @@
 # Summary
 [Get server status](#get-server-status)  
 [Get rpc status](#get-rpc-status)  
+[Send raw transaction](#send-raw-transaction)  
 
 ***
 
@@ -71,5 +72,39 @@ status: 400
 {
     "result": "error",
     "message": "RPC provider is not working"
+}
+```
+
+## Send raw transaction
+```
+ POST /rpc/sendrawtransaction
+```
+
+### BODY
+Name | Type | Mandatory | Description
+------------ | ------------ | ------------ | ------------
+raw | String | Yes |  The hex string of the raw transaction
+allowhighfees | Booleand | Optional, default=false | Allow high fees
+swifttx | Boolean | Optional, default=false | Use SwiftTX to send this transaction
+
+* for successed case
+
+status: 200
+```javascript
+{
+    "result": "ok",
+    "data": tx_hash
+}
+
+- tx_hash: "hex" (string) The transaction hash in hex
+```
+
+* for failed case
+
+status: 400
+```javascript
+{
+    "result": "error",
+    "message": err_msg
 }
 ```
