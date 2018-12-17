@@ -10,10 +10,10 @@ exports.sendrawtransaction = (req, res) => {
 
   try {
     return client.call('sendrawtransaction', [raw, allowhighfees, swifttx], (err, result) => {
-      if (err) return res.status(400).send({ result: 'error', err });
+      if (err) return res.status(400).send({ result: 'error', message: 'Error occured while sending raw transaction', error: err });
       return res.status(200).send({ result: 'ok', data: result });
     });
   } catch (error) {
-    return res.status(400).send({ result: 'error', error });
+    return res.status(400).send({ result: 'error', message: 'Rpc call error', error });
   }
 };
