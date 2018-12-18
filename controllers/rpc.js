@@ -1,11 +1,11 @@
-const { toBoolean } = require('../modules/utils');
+const { stringToBoolean } = require('../modules/utils');
 const config = require('../config');
 const client = config.rpcClient;
 
 exports.sendrawtransaction = (req, res) => {
   const raw = req.body.raw;
-  const allowhighfees = toBoolean(req.body.allowhighfees);
-  const swifttx = toBoolean(req.body.swifttx);
+  const allowhighfees = stringToBoolean(req.body.allowhighfees);
+  const swifttx = stringToBoolean(req.body.swifttx);
 
   console.log('============ raw, allowhighfees, swifttx ============', raw, allowhighfees, swifttx);
   if (!raw) return res.status(400).send({ result: 'error', message: 'Empty raw data!' });
