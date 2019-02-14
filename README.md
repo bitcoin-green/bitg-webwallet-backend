@@ -84,4 +84,18 @@ To view more detailed documentation regarding the API, check out the [API docume
 
 
 This application integrates the following services & APIs:
-* [bitcoingreen node rpc](https://github.com/bitcoingreen/) - RPC documentatin is not ready yet.
+* [bitcoingreen node rpc](https://github.com/bitcoingreen/) - RPC documentation is not ready yet.
+
+### Adding DNS or SSL
+
+If you want to add DNS or SSL through Nginx and certbot, you can follow the configuration steps [here](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04) on ubuntu 18.04+.
+
+Once it is setup, make sure to add a proxy_pass rule instead of serving the files on the filesystem:
+
+```
+location / {
+    proxy_pass http://127.0.0.1:8080/;
+}   
+
+```
+You can use whichever port is defined in the `config` folder of this application, but by default it runs on port 8080. If SSL is enabled, make sure the rule that you update with a `proxy_pass` is a secure one.
