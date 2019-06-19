@@ -1,4 +1,4 @@
-# Public Rest API for BitcoinGreen Node
+# Public Rest API for BitGreen Node
 
     api prefix: /api/v1
 

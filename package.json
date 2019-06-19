@@ -1,7 +1,7 @@
 {
   "name": "bitg-wallet-backend",
   "version": "1.0.0",
-  "description": "This is the BitcoinGreen webwallet backend.",
+  "description": "This is the BitGreen webwallet backend.",
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=development nodemon server.js"
