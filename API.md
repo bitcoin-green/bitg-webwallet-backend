@@ -3,9 +3,11 @@
     api prefix: /api/v1
 
 # Summary
-[Get server status](#get-server-status)  
-[Get rpc status](#get-rpc-status)  
-[Send raw transaction](#send-raw-transaction)  
+[Get server status](#get-server-status)
+[Get rpc status](#get-rpc-status)
+[Get address balance](#get-address-balance)
+[Get address unspent](#get-address-unspent)
+[Send raw transaction](#send-raw-transaction)
 
 ***
 
@@ -74,6 +76,77 @@ status: 400
     "message": "RPC provider is not working"
 }
 ```
+
+## Get address balance
+
+```
+ GET /rpc/getbalance
+```
+
+### Params
+
+address
+
+* for successed case
+
+status: 200
+
+```javascript
+{
+    "result": "ok"
+    "data": [
+        "address": balance
+    ]
+}
+```
+
+* for failed case
+
+status: 500
+```javascript
+{
+    "result": "error",
+    "message": err_msg
+}
+```
+
+## Get address unspent
+
+```
+ GET /rpc/getunspent
+```
+
+### Params
+
+address
+
+* for successed case
+
+status: 200
+
+```javascript
+{
+    "result": "ok"
+    "data": [
+        "address": address,
+        "txid": tx_hash,
+        "vout": vout_idx,
+        "value": amount,
+        "time": time
+    ]
+}
+```
+
+* for failed case
+
+status: 500
+```javascript
+{
+    "result": "error",
+    "message": err_msg
+}
+```
+
 
 ## Send raw transaction
 ```
