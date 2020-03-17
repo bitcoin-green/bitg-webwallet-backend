@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => { // eslint-disable-line
 
 router.get('/rpc', (req, res, next) => { // eslint-disable-line
   try {
-    return client.call('getinfo', [], (err, result) => {
+    return client.call('getblockcount', [], (err, result) => {
       if (err) return res.status(400).send({ result: 'error', message: 'RPC provider is not working' });
       return res.status(200).send({ result: 'ok', data: result });
     });
